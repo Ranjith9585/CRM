@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<div class="row">
+	
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	 <table width="90%" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px">
+											  <tr>
+											  <th width="4%">User ID</th>
+											  
+												
+												
+												
+												<th width="4%">Place ID</th>
+												<th width="8%">Location </th>
+												<th width="5%">NSP </th>
+												<th width="14%">Device Category</th>
+												<th width="9%">Mobile No.</th>
+												<th width="9%">IMEI</th>
+												<th width="9%">IP Address</th>
+												
+												<th width="9%">Browser</th>
+												<th width="6%">No. of Visit</th>
+												<th width="5%">Sessions</th>
+												
+												<th width="4%">URL</th>
+												<th width="4%">First Visit Time </th>
+												<th width="8%">Last Visit Time </th>
+												<th width="4%">Date</th>
+												<th width="4%">Search Query</th>
+												
+												
+												<th width="7%">No. of Uploads</th>
+												<th width="9%">No. of Downloads</th>
+												<th width="9%">Share with Social Media</th>
+												<th width="6%">Visit Type</th>
+											   
+											  </tr>
+											  {% for rs in data %}
+											  <tr>
+											  <td>{{rs[0]}}</td>
+												
+												<td>{{rs[4]}}</td>
+												<td>{{rs[11]}}, {{rs[12]}}</td>
+												<td>{{rs[14]}}</td>
+												<td>
+												
+												{% if rs[15]==1 %}
+												Mobile
+												{% elif rs[15]==2 %}
+												Tablet
+												{% else %}
+												Desktop
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs[15]==1 or rs[15]==2 %}
+												{{rs[8]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												<td>
+												{% if rs[15]==1 or rs[15]==2 %}
+												{{rs[9]}}
+												{% else %}
+												0
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs[15]==3 %}
+												{{rs[10]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												
+												
+												<td>
+												{% if rs[15]==3 %}
+												{{rs[16]}}
+												{% else %}
+												{{rs[17]}}
+												{% endif %}
+												
+												</td>
+												<td>{{rs[18]}}</td>
+												<td>{{rs[7]}}</td>
+												
+												
+												
+												<td>{{rs[13]}}</td>
+												<td>{{rs[2]}}</td>
+												<td>{{rs[3]}}</td>
+												<td>{{rs[5]}}</td>
+												<td>{{rs[22]}}</td>
+												
+												
+												<td>{{rs[20]}}</td>
+												<td>{{rs[21]}}</td>
+												<td>{{rs[19]}}</td>
+												<td>{{rs[6]}}</td>
+											  </tr>
+											  {% endfor %}
+		</table>
+	  </div>
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<img src="../static/chart/{{fn}}" width="600" height="300" />
+	</div>
+</div>
+</body>
+</html>

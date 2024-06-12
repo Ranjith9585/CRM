@@ -1,0 +1,453 @@
+<html>
+    <head>
+	<style type="text/css">
+	body {
+  /*background: #222;*/
+}
+
+h3 {
+  margin: 4px 0;
+  padding: 5px 0;
+  font-family: arial, sans-serif;
+  width: 100%;
+  color: #fff;
+}
+h3 a {
+  color: #00B2EE;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: #55d4ff;
+}
+
+#map-canvas {
+  width: auto;
+  height: 500px;
+}
+
+#info {
+  color: #222;
+}
+
+.lngLat {
+  color: #fff;
+  margin-bottom: 5px;
+}
+.lngLat .one {
+  padding-left: 250px;
+}
+.lngLat .two {
+  padding-left: 34px;
+}
+
+#clipboard-btn {
+  float: left;
+  margin-right: 10px;
+  padding: 6px 8px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#info {
+  height: 140px;
+  float: left;
+  margin-bottom: 30px;
+  border: solid 2px #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 2px 5px #444;
+  -webkit-box-shadow: inset 0 2px 5px #444;
+  box-shadow: inset 0 2px 5px #444;
+}
+
+#info, .lngLat {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  width: 270px;
+}
+
+	</style>
+        <meta charset="utf-8">
+        <title>Child Safety</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../static/css/style.css" rel="stylesheet">
+    </head>
+
+    <body onLoad="initialize()">
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="/" class="navbar-brand">Child Safety</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="/guest" class="nav-item nav-link">Home</a>
+                        <a href="/logout" class="nav-item nav-link">Logout</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- Hero Start -->
+        
+        <!-- Hero End -->
+
+
+        <!-- About Start -->
+       
+        <!-- About End -->
+        
+        
+        <!-- Service Start -->
+       
+        <!-- Service End -->
+        
+        
+         <!-- Experience Start -->
+        <div class="experience" id="experience">
+            <div class="container">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    
+                </header>
+			</div>
+		</div>
+        <!-- Job Experience End -->
+        
+        
+        <!-- Banner Start -->
+       
+        <!-- Banner End -->
+
+
+        <!-- Portfolio Start -->
+        
+        <!-- Portfolio End -->
+        
+        
+        <!-- Banner Start -->
+        
+        <!-- Banner End -->
+        
+        
+        <!-- Price Start -->
+       
+        <!-- Price End -->
+        
+        
+        <!-- Testimonial Start -->
+       
+        <!-- Testimonial End -->
+
+
+        <!-- Team Start -->
+       
+        <!-- Team End -->
+        
+        
+        <!-- Contact Start -->
+		
+     
+        <!-- Blog Start -->
+        <div class="blog" id="blog">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    
+                    <h2>Search Location Info</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="blog-img">
+                             
+		<h3>Drag or re-shape for coordinates to display below</h3>
+  <h3><a href="http://codepen.io/jhawes/blog/creating-a-real-estate-polygon-tool">Geo Fence Location</a></h3>
+  <form name="form1" method="get">
+  <select name="city" class="form-control" onChange="this.form.submit()">
+  <option value="">-Select City-</option>
+  {% for rs1 in data1 %}
+  <option>{{rs1[1]}}</option>
+  {% endfor %}
+  </select>
+  </form>
+  
+  
+  
+  <div id="map-canvas"></div>
+  <div class="lngLat"><span class="one">Lat</span><span class="two">,Lng</span></div>
+  <button id="clipboard-btn" onClick="copyToClipboard(document.getElementById('info').innerHTML)">Copy to Clipboard</button>
+  <form name="form1" method="post">
+  <textarea id="info" name="detail"></textarea>
+  <input type="hidden" name="location" class="form-control" placeholder="Location" value="{{city}}">
+ <br>
+ <br>
+	<input type="submit" name="btn" class="btn" value="Predict">
+	</form>
+	
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'></script>
+  <!--<script src="js/index.js"></script>-->
+  <script>
+  //var myPolygon;
+function initialize() {
+  // Map Center
+  var myLatLng = {{det1}};
+  // General Options
+  var mapOptions = {
+    zoom: 18,
+    center: myLatLng,
+    mapTypeId: 'satellite' //google.maps.MapTypeId.RoadMap
+	
+  };
+ 
+  var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+  
+  
+  // Polygon Coordinates
+  var triangleCoords = [
+	{{detail}}
+
+  ];
+  // Styling & Controls
+  myPolygon = new google.maps.Polygon({
+    paths: triangleCoords,
+    draggable: true, // turn off if it gets annoying
+    editable: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35
+  });
+
+  myPolygon.setMap(map);
+  //google.maps.event.addListener(myPolygon, "dragend", getPolygonCoords);
+  google.maps.event.addListener(myPolygon.getPath(), "insert_at", getPolygonCoords);
+  //google.maps.event.addListener(myPolygon.getPath(), "remove_at", getPolygonCoords);
+  google.maps.event.addListener(myPolygon.getPath(), "set_at", getPolygonCoords);
+}
+
+//Display Coordinates below map
+function getPolygonCoords() {
+  var len = myPolygon.getPath().getLength();
+  var htmlStr = "";
+  for (var i = 0; i < len; i++) {
+    htmlStr += "new google.maps.LatLng(" + myPolygon.getPath().getAt(i).toUrlValue(5) + "), ";
+    //Use this one instead if you want to get rid of the wrap > new google.maps.LatLng(),
+    //htmlStr += "" + myPolygon.getPath().getAt(i).toUrlValue(5);
+  }
+  document.getElementById('info').innerHTML = htmlStr;
+}
+function copyToClipboard(text) {
+  window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+}
+  </script>
+							 
+							 
+                            </div>
+                            <div class="blog-text">
+                                <h2>Child Safety</h2>
+                                <div class="blog-meta">
+                                   
+                                </div>
+                                <p>
+                                   Child safety, area concerned with limiting children's exposure to hazards and reducing children's risk of harm. Children are particularly vulnerable to accidents, and their safety requires different approaches from those for adults.
+                                </p>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="blog-img">
+                                <img src="../static/img/blog-2.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-text">
+                                <h2>Detected Info</h2>
+								{% if act=="1" %}
+								
+                                <div class="blog-meta">
+								
+								<div class="row">
+								{% for rs4 in data4 %}
+								<div class="col-md-12">
+                                 <table border="0" cellpadding="5" cellspacing="5">
+								 <tr>
+								 <td>
+								 {% if rs4[14]=="Airtel" %}
+								 <img src="../static/img/a1.png" width="30" height="30">
+								 {% elif rs4[14]=="BSNL" %}
+								 <img src="../static/img/a4.png" width="30" height="30">
+								 {% elif rs4[14]=="Jio" %}
+								 <img src="../static/img/a5.png" width="30" height="30">
+								 {% else %}
+								 <img src="../static/img/a4.png" width="30" height="30">
+								 {% endif %}
+								 </td>
+								 <td colspan="2">{{rs4[14]}}</td>
+								 <td>{% if rs4[15]==1 %}
+											Mobile
+											{% elif rs4[15]==2 %}
+											Tablet
+											{% else %}
+											Desktop
+											{% endif %}</td>
+								 </tr>
+								 <tr>
+								 <td>&nbsp;</td>
+								 <td>Visit Count: {{rs4[18]}}</td>
+								 <td>Visit Time: {{rs4[2]}} to {{rs4[3]}}</td>
+								 </tr>
+								 <tr>
+								 
+								 <td colspan="3">SI Score: {{rs4[24]}}%</td>
+								 </tr>
+								 <tr>
+								 <td colspan="3">
+								 	{% if rs4[24]>=70%}
+								 <div class="widget-content-right w-100">
+                                                    <div class="progress-bar-xs progress">
+                                                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{rs4[24]}}" aria-valuemin="0" aria-valuemax="100" style="width: 71%;"></div>
+                                                    </div>
+                                                </div>
+												
+									{% elif rs4[24]>=40%}	
+									 <div class="widget-content-right w-100">
+                                                    <div class="progress-bar-xs progress">
+                                                       <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{rs4[24]}}" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
+                                                    </div>
+                                                </div>
+									
+									{% else %}		
+									<div class="widget-content-right w-100">
+                                                    <div class="progress-bar-xs progress">
+                                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{rs4[24]}}" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                                                    </div>
+                                                </div>
+									{% endif %}
+												
+												
+									</td>			
+								</tr>	
+								 <tr style="border-bottom:dotted #000099 1px">
+								 <td colspan="3">&nbsp;</td>
+								 </tr>
+								  </table>
+								  </div>
+								{% endfor %}
+								
+								<div class="col-md-12">
+								<br>
+								<h4 style="color:#0033CC">Predicted Score: {{avg}} %</h4><br><br>
+									{% if avg>=70 %}
+									<h3>Level: <span style="color:#FF0000">Not Safe</span></h3>
+									{% elif avg>=40 %}
+									<h3>Level: <span style="color:#FF9900">Moderate</span></h3>
+									{% else %}
+									<h3>Level: <span style="color:#00CC33">Safe</span></h3>
+									{% endif %}
+								</div>
+								</div>
+								</div>
+								{% endif %}
+											
+								
+								 
+								 
+								
+								
+                                
+                                <p>
+                                  It helps to reduce their vulnerability in harmful situations. It also means protecting children against social, psychological and emotional insecurity and distress. ... Child Protection is relevant for all settings-home, school, neighbourhood, community, and institutional
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <h2>Child Safety</h2>
+                        <h3>India</h3>
+                        <div class="footer-menu">
+                            <p>+012 345 67890</p>
+                            <p>child@info.com</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <p>&copy; <a href="#"></a> Child Safety<a href="https://htmlcodex.com"></a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        
+        <!-- Back to top button -->
+        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/lib/easing/easing.min.js"></script>
+        <script src="../static/lib/wow/wow.min.js"></script>
+        <script src="../static/lib/waypoints/waypoints.min.js"></script>
+        <script src="../static/lib/typed/typed.min.js"></script>
+        <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <!--<script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>-->
+
+        <!-- Template Javascript -->
+        <script src="../static/js/main.js"></script>
+    </body>
+</html>

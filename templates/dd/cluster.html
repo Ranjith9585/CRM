@@ -1,0 +1,607 @@
+<html>
+    <head>
+	<style type="text/css">
+	body {
+  /*background: #222;*/
+}
+
+h3 {
+  margin: 4px 0;
+  padding: 5px 0;
+  font-family: arial, sans-serif;
+  width: 100%;
+  color: #fff;
+}
+h3 a {
+  color: #00B2EE;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: #55d4ff;
+}
+
+#map-canvas {
+  width: auto;
+  height: 500px;
+}
+
+#info {
+  color: #222;
+}
+
+.lngLat {
+  color: #fff;
+  margin-bottom: 5px;
+}
+.lngLat .one {
+  padding-left: 250px;
+}
+.lngLat .two {
+  padding-left: 34px;
+}
+
+#clipboard-btn {
+  float: left;
+  margin-right: 10px;
+  padding: 6px 8px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#info {
+  height: 140px;
+  float: left;
+  margin-bottom: 30px;
+  border: solid 2px #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 2px 5px #444;
+  -webkit-box-shadow: inset 0 2px 5px #444;
+  box-shadow: inset 0 2px 5px #444;
+}
+
+#info, .lngLat {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  width: 270px;
+}
+
+	</style>
+        <meta charset="utf-8">
+        <title>Child Safety</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">-->
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../static/css/style.css" rel="stylesheet">
+		<style type="text/css">
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+    </head>
+
+    <body onLoad="initialize()">
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="/" class="navbar-brand">Child Safety</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="/admin" class="nav-item nav-link">Home</a>
+                        <a href="/admin_view" class="nav-item nav-link">Data</a>
+                        <a href="/login_admin" class="nav-item nav-link active">Logout</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- Hero Start -->
+        
+        <!-- Hero End -->
+
+
+        <!-- About Start -->
+       
+        <!-- About End -->
+        
+        
+        <!-- Service Start -->
+       
+        <!-- Service End -->
+        
+        
+         <!-- Experience Start -->
+        <div class="experience" id="experience">
+            <div class="container">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    
+                </header>
+			</div>
+		</div>
+        <!-- Job Experience End -->
+        
+        
+        <!-- Banner Start -->
+       
+        <!-- Banner End -->
+
+
+        <!-- Portfolio Start -->
+        
+        <!-- Portfolio End -->
+        
+        
+        <!-- Banner Start -->
+        
+        <!-- Banner End -->
+        
+        
+        <!-- Price Start -->
+       
+        <!-- Price End -->
+        
+        
+        <!-- Testimonial Start -->
+       
+        <!-- Testimonial End -->
+
+
+        <!-- Team Start -->
+       
+        <!-- Team End -->
+        
+        
+        <!-- Contact Start -->
+		
+     
+        <!-- Blog Start -->
+        
+        <div class="blog" id="blog">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    
+                    <h2>Clustering</h2>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+<div align="center">
+	<h3 align="center">Cluster by UserID</h3>
+	<div class="row">
+	
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	 <table width="90%" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px">
+											  <tr>
+											  <th width="4%">User ID</th>
+											  
+												
+												
+												
+												<th width="4%">Place ID</th>
+												<th width="8%">Location </th>
+												<th width="5%">NSP </th>
+												<th width="14%">Device Category</th>
+												<th width="9%">Mobile No.</th>
+												<th width="9%">IMEI</th>
+												<th width="9%">IP Address</th>
+												
+												<th width="9%">Browser</th>
+												<th width="6%">No. of Visit</th>
+												<th width="5%">Sessions</th>
+												
+												<th width="4%">URL</th>
+												<th width="4%">First Visit Time </th>
+												<th width="8%">Last Visit Time </th>
+												<th width="4%">Date</th>
+												<th width="4%">Search Query</th>
+												
+												
+												<th width="7%">No. of Uploads</th>
+												<th width="9%">No. of Downloads</th>
+												<th width="9%">Share with Social Media</th>
+												<th width="6%">Visit Type</th>
+											   
+											  </tr>
+											  {% for rs in data %}
+											  <tr>
+											  <td>{{rs[0]}}</td>
+												
+												<td>{{rs[4]}}</td>
+												<td>{{rs[11]}}, {{rs[12]}}</td>
+												<td>{{rs[14]}}</td>
+												<td>
+												
+												{% if rs[15]==1 %}
+												Mobile
+												{% elif rs[15]==2 %}
+												Tablet
+												{% else %}
+												Desktop
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs[15]==1 or rs[15]==2 %}
+												{{rs[8]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												<td>
+												{% if rs[15]==1 or rs[15]==2 %}
+												{{rs[9]}}
+												{% else %}
+												0
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs[15]==3 %}
+												{{rs[10]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												
+												
+												<td>
+												{% if rs[15]==3 %}
+												{{rs[16]}}
+												{% else %}
+												{{rs[17]}}
+												{% endif %}
+												
+												</td>
+												<td>{{rs[18]}}</td>
+												<td>{{rs[7]}}</td>
+												
+												
+												
+												<td>{{rs[13]}}</td>
+												<td>{{rs[2]}}</td>
+												<td>{{rs[3]}}</td>
+												<td>{{rs[5]}}</td>
+												<td>{{rs[22]}}</td>
+												
+												
+												<td>{{rs[20]}}</td>
+												<td>{{rs[21]}}</td>
+												<td>{{rs[19]}}</td>
+												<td>{{rs[6]}}</td>
+											  </tr>
+											  {% endfor %}
+		</table>
+	  </div>
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<img src="../static/chart/{{fn}}" width="600" height="300" />
+	</div>
+</div>
+</div>
+
+<p></p>
+<div align="center">
+	<h3 align="center">Cluster by Visit Type</h3>
+	<div class="row">
+	
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<table width="90%" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px">
+											  <tr>
+											  <th width="4%">User ID</th>
+											  
+												
+												
+												
+												<th width="4%">Place ID</th>
+												<th width="8%">Location </th>
+												<th width="5%">NSP </th>
+												<th width="14%">Device Category</th>
+												<th width="9%">Mobile No.</th>
+												<th width="9%">IMEI</th>
+												<th width="9%">IP Address</th>
+												
+												<th width="9%">Browser</th>
+												<th width="6%">No. of Visit</th>
+												<th width="5%">Sessions</th>
+												
+												<th width="4%">URL</th>
+												<th width="4%">First Visit Time </th>
+												<th width="8%">Last Visit Time </th>
+												<th width="4%">Date</th>
+												<th width="4%">Search Query</th>
+												
+												
+												<th width="7%">No. of Uploads</th>
+												<th width="9%">No. of Downloads</th>
+												<th width="9%">Share with Social Media</th>
+												<th width="6%">Visit Type</th>
+											   
+											  </tr>
+											  {% for rs2 in data2 %}
+											  <tr>
+											  <td>{{rs2[0]}}</td>
+												
+												<td>{{rs2[4]}}</td>
+												<td>{{rs2[11]}}, {{rs2[12]}}</td>
+												<td>{{rs2[14]}}</td>
+												<td>
+												
+												{% if rs2[15]==1 %}
+												Mobile
+												{% elif rs2[15]==2 %}
+												Tablet
+												{% else %}
+												Desktop
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs2[15]==1 or rs2[15]==2 %}
+												{{rs2[8]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												<td>
+												{% if rs2[15]==1 or rs2[15]==2 %}
+												{{rs2[9]}}
+												{% else %}
+												0
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs2[15]==3 %}
+												{{rs2[10]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												
+												
+												<td>
+												{% if rs2[15]==3 %}
+												{{rs2[16]}}
+												{% else %}
+												{{rs2[17]}}
+												{% endif %}
+												
+												</td>
+												<td>{{rs2[18]}}</td>
+												<td>{{rs2[7]}}</td>
+												
+												
+												
+												<td>{{rs2[13]}}</td>
+												<td>{{rs2[2]}}</td>
+												<td>{{rs2[3]}}</td>
+												<td>{{rs2[5]}}</td>
+												<td>{{rs2[22]}}</td>
+												
+												
+												<td>{{rs2[20]}}</td>
+												<td>{{rs2[21]}}</td>
+												<td>{{rs2[19]}}</td>
+												<td>{{rs2[6]}}</td>
+											  </tr>
+											  {% endfor %}
+											</table>
+	 </div>
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<img src="../static/chart/{{fn2}}" width="600" height="300" />
+	</div>
+</div>
+
+<div align="center">
+	<h3 align="center">Cluster by Place ID</h3>
+	<div class="row">
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<table width="90%" border="0" align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:12px">
+											  <tr>
+											  <th width="4%">User ID</th>
+											  
+												
+												
+												
+												<th width="4%">Place ID</th>
+												<th width="8%">Location </th>
+												<th width="5%">NSP </th>
+												<th width="14%">Device Category</th>
+												<th width="9%">Mobile No.</th>
+												<th width="9%">IMEI</th>
+												<th width="9%">IP Address</th>
+												
+												<th width="9%">Browser</th>
+												<th width="6%">No. of Visit</th>
+												<th width="5%">Sessions</th>
+												
+												<th width="4%">URL</th>
+												<th width="4%">First Visit Time </th>
+												<th width="8%">Last Visit Time </th>
+												<th width="4%">Date</th>
+												<th width="4%">Search Query</th>
+												
+												
+												<th width="7%">No. of Uploads</th>
+												<th width="9%">No. of Downloads</th>
+												<th width="9%">Share with Social Media</th>
+												<th width="6%">Visit Type</th>
+											   
+											  </tr>
+											  {% for rs3 in data3 %}
+											  <tr>
+											  <td>{{rs3[0]}}</td>
+												
+												<td>{{rs3[4]}}</td>
+												<td>{{rs3[11]}}, {{rs3[12]}}</td>
+												<td>{{rs3[14]}}</td>
+												<td>
+												
+												{% if rs3[15]==1 %}
+												Mobile
+												{% elif rs3[15]==2 %}
+												Tablet
+												{% else %}
+												Desktop
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs3[15]==1 or rs3[15]==2 %}
+												{{rs3[8]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												<td>
+												{% if rs3[15]==1 or rs3[15]==2 %}
+												{{rs3[9]}}
+												{% else %}
+												0
+												{% endif %}
+												
+												</td>
+												<td>
+												{% if rs3[15]==3 %}
+												{{rs3[10]}}
+												{% else %}
+												0
+												{% endif %}
+												</td>
+												
+												
+												<td>
+												{% if rs3[15]==3 %}
+												{{rs3[16]}}
+												{% else %}
+												{{rs3[17]}}
+												{% endif %}
+												
+												</td>
+												<td>{{rs3[18]}}</td>
+												<td>{{rs3[7]}}</td>
+												
+												
+												
+												<td>{{rs3[13]}}</td>
+												<td>{{rs3[2]}}</td>
+												<td>{{rs3[3]}}</td>
+												<td>{{rs3[5]}}</td>
+												<td>{{rs3[22]}}</td>
+												
+												
+												<td>{{rs3[20]}}</td>
+												<td>{{rs3[21]}}</td>
+												<td>{{rs3[19]}}</td>
+												<td>{{rs3[6]}}</td>
+											  </tr>
+											  {% endfor %}
+		</table>
+	</div>
+	<div class="column" style="width:50%; height:350px; overflow:auto">
+	<img src="../static/chart/{{fn3}}" width="600" height="300" />
+	</div>
+	</div>
+</div>
+
+
+
+<div align="center">
+<form method="post" action="/feature_extract">
+<button type="submit" name="btn2" class="btn">Feature Extraction <i class="fa fa-angle-right"></i></button>
+</form>
+
+</div>
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <h2>Child Safety</h2>
+                        <h3>India</h3>
+                        <div class="footer-menu">
+                            <p>+012 345 67890</p>
+                            <p>child@info.com</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <p>&copy; <a href="#"></a> Child Safety<a href="https://htmlcodex.com"></a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+		
+        
+        <!-- Back to top button -->
+        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        
+        <!-- Pre Loader -->
+       <!-- <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>-->
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/lib/easing/easing.min.js"></script>
+        <script src="../static/lib/wow/wow.min.js"></script>
+        <script src="../static/lib/waypoints/waypoints.min.js"></script>
+        <script src="../static/lib/typed/typed.min.js"></script>
+        <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <!--<script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>-->
+
+        <!-- Template Javascript -->
+        <script src="../static/js/main.js"></script>
+    </body>
+</html>

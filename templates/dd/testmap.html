@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+ <h3>Drag or re-shape for coordinates to display below</h3>
+  <h3><a href="http://codepen.io/jhawes/blog/creating-a-real-estate-polygon-tool">Geo Fence Location</a></h3>
+  <form name="form1" method="get">
+  <select name="city" class="form-control" onChange="this.form.submit()">
+  <option value="">-Select City-</option>
+  {% for rs1 in data1 %}
+  <option>{{rs1[1]}}</option>
+  {% endfor %}
+  </select>
+  </form>
+  
+  
+  
+  <div id="map-canvas"></div>
+  <div class="lngLat"><span class="one">Lat</span><span class="two">,Lng</span></div>
+  <button id="clipboard-btn" onClick="copyToClipboard(document.getElementById('info').innerHTML)">Copy to Clipboard</button>
+  <form name="form1" method="post">
+  <textarea id="info" name="detail"></textarea>
+  <input type="text" name="location" class="form-control" placeholder="Location" value="{{city}}">
+  <input type="text" name="branch" class="form-control" placeholder="Branch Name">
+	<input type="submit" name="btn" class="form-control" value="Add">
+	</form>
+	
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'></script>
+  <!--<script src="js/index.js"></script>-->
+  <script>
+  //var myPolygon;
+function initialize() {
+  // Map Center
+  var myLatLng = {{det1}};
+  // General Options
+  var mapOptions = {
+    zoom: 18,
+    center: myLatLng,
+    mapTypeId: 'satellite' //google.maps.MapTypeId.RoadMap
+	
+  };
+ 
+  var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+  
+  
+  // Polygon Coordinates
+  var triangleCoords = [
+	{{detail}}
+
+  ];
+  // Styling & Controls
+  myPolygon = new google.maps.Polygon({
+    paths: triangleCoords,
+    draggable: true, // turn off if it gets annoying
+    editable: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35
+  });
+
+  myPolygon.setMap(map);
+  //google.maps.event.addListener(myPolygon, "dragend", getPolygonCoords);
+  google.maps.event.addListener(myPolygon.getPath(), "insert_at", getPolygonCoords);
+  //google.maps.event.addListener(myPolygon.getPath(), "remove_at", getPolygonCoords);
+  google.maps.event.addListener(myPolygon.getPath(), "set_at", getPolygonCoords);
+}
+
+//Display Coordinates below map
+function getPolygonCoords() {
+  var len = myPolygon.getPath().getLength();
+  var htmlStr = "";
+  for (var i = 0; i < len; i++) {
+    htmlStr += "new google.maps.LatLng(" + myPolygon.getPath().getAt(i).toUrlValue(5) + "), ";
+    //Use this one instead if you want to get rid of the wrap > new google.maps.LatLng(),
+    //htmlStr += "" + myPolygon.getPath().getAt(i).toUrlValue(5);
+  }
+  document.getElementById('info').innerHTML = htmlStr;
+}
+function copyToClipboard(text) {
+  window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+}
+  </script>
+  
+  
+</body>
+</html>
